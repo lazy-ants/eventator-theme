@@ -47,12 +47,30 @@ input {
     transition: 0.3s ease all;
 }
 
+select:focus,
 textarea:focus,
 input:focus {
     -webkit-box-shadow: 0 2px 7px 0 rgba(0, 0, 0, 0.20);
     -moz-box-shadow: 0 2px 7px 0 rgba(0, 0, 0, 0.20);
     box-shadow: 0 2px 7px 0 rgba(0, 0, 0, 0.20);
 }
+
+.field_text.error input {
+    border:1px solid #EB5757;
+}
+
+.field_text.error:after {
+    content: '';
+    background: url(../img/comment-alert.png) no-repeat;
+    background-size: 20px;
+    position: absolute;
+    top: 10px;
+    right: -10px;
+    width: 20px;
+    height: 20px;
+}
+
+
 
 body {
     line-height: 1;
@@ -90,6 +108,21 @@ body {
     -webkit-box-shadow: 0 2px 7px 0 rgba(0, 0, 0, 0.20);
     -moz-box-shadow: 0 2px 7px 0 rgba(0, 0, 0, 0.20);
     box-shadow: 0 2px 7px 0 rgba(0, 0, 0, 0.20);
+}
+
+.btn_cancel {
+    display: inline-block;
+    background: none;
+    height: 40px;
+    min-width: 90px;
+    border-radius: 3px;
+    padding: 0 20px;
+    line-height: 40px;
+    color: #828282;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: normal;
+    transition: 0.3s ease-out all;
 }
 
 .bg {
@@ -198,6 +231,52 @@ header {
 .logo img {
     max-width: 194px;
     margin: 16px 0;
+}
+
+.gradient {
+    background: linear-gradient(45deg, #567aeb, #24c9de);
+}
+
+.gradient h3 {
+    color: #fff;
+    font-size: 31px;
+    font-weight: normal;
+    max-width: 770px;
+    line-height: 38px;
+    padding: 75px 0;
+}
+
+.gradient h3 span {
+    font-weight: bold;
+}
+
+.form_call_of_paper {
+    max-width: 1024px;
+    padding: 0 15px 0 0;
+
+}
+
+.form_call_of_paper .three {
+    width: calc(100% + 22px);
+    max-width: 1047px;
+}
+
+.form_call_of_paper .field_text {
+    margin-right: 50px;
+    width: 100%;
+}
+
+.form_call_of_paper .field_text:last-child {
+    margin-right: 0;
+}
+
+.field_text.select {
+    margin-right: 25px;
+}
+
+.wrapper_btn {
+    text-align: right;
+    margin-right: -20px;
 }
 
 #slides {
@@ -413,6 +492,7 @@ header {
     padding: 15px;
     position: relative;
 }
+
 .image_bg {
     max-width: 55%;
 }
@@ -522,31 +602,37 @@ header {
     background-size: cover;
     width: 100%;
 }
+
 .bg_2 {
     background: url(../img/slide3.jpg) no-repeat;
     background-size: cover;
     width: 100%;
 }
+
 .bg_3 {
     background: url(../img/slide1.jpg) no-repeat;
     background-size: cover;
 }
+
 .bg_4 {
     background: url(../img/slide2.jpg) no-repeat;
     background-size: cover;
     width: 100%;
 }
+
 .bg_5 {
     background: url(../img/slide8.jpg) no-repeat;
     background-size: cover;
     width: 100%;
     height: 60%;
 }
+
 .bg_6 {
     background: url(../img/slide4.png) no-repeat;
     background-size: cover;
     width: 100%;
 }
+
 .bg_7 {
     background: url(../img/slide7.jpg) no-repeat;
     background-size: cover;
@@ -753,7 +839,7 @@ h4.text {
     margin: 35px 60px 20px 0;
 }
 
-.form .field_text {
+.field_text {
     position: relative;
     margin: 20px 0 35px;
 }
@@ -791,6 +877,22 @@ h4.text {
 }
 
 .field_text textarea:focus ~ span {
+    top: -23px;
+    left: 0;
+}
+
+.field_text select {
+    width: 100%;
+    height: 40px;
+    background: #fff;
+    padding: 0 8px;
+    outline: none;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+.field_text select.active ~ span,
+.field_text select:focus ~ span {
     top: -23px;
     left: 0;
 }
@@ -868,7 +970,7 @@ footer .footer_text {
 }
 
 .overlay {
-    background: rgba(0,0,0, 0.9);
+    background: rgba(0, 0, 0, 0.9);
     position: fixed;
     top: 0;
     left: 0;
@@ -1390,6 +1492,7 @@ footer .footer_text {
         background: url(../img/slide3.jpg) no-repeat;
         background-size: cover;
     }
+
     .row_big.flex,
     .row.flex {
         display: block;
@@ -1411,6 +1514,7 @@ footer .footer_text {
         min-width: 100%;
         width: 100%;
     }
+
     .text_bg .twit {
         font-size: 13px;
         text-overflow: ellipsis;
@@ -1424,6 +1528,7 @@ footer .footer_text {
     .text_bg .desc {
         font-size: 13px;
     }
+
     .row_big .vertical,
     .row_big .horizontal {
         max-width: 100%;
@@ -1445,6 +1550,41 @@ footer .footer_text {
 
     .vertical .image_bg {
         min-height: 380px;
+    }
+
+    .form_call_of_paper .flex {
+        display: block;
+    }
+
+    .form_call_of_paper {
+        max-width: 1024px;
+        padding: 0 22px 0 0;
+    }
+
+    .form_call_of_paper .three .field_text:last-child {
+        width: 100%;
+    }
+
+    .form_call_of_paper .three .field_text.select {
+        margin-right: 25px;
+        width: 100%;
+    }
+
+    .form_call_of_paper .three .field_text {
+        width: calc(100% - 25px);
+    }
+
+    .wrapper_btn {
+        text-align: right;
+    }
+
+    .gradient h3 {
+        color: #fff;
+        font-size: 20px;
+        font-weight: normal;
+        max-width: 770px;
+        line-height: 27px;
+        padding: 120px 0 50px;
     }
 
 }
